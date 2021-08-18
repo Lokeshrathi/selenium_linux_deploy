@@ -5,7 +5,7 @@ import time
 import pandas as pd
 import numpy as np
 firefoxOptions = Options()
-keys_ = ['acrylic paint tubes','acrylic colors']
+keys_ = ['acrylic paint tubes']
 order = []
 product_link = []
 grocery = []
