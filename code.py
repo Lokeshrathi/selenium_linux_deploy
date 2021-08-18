@@ -11,7 +11,7 @@ chrome_options.add_argument('--disable-dev-shm-usage')
 CHROMEDRIVER_PATH = '/usr/bin/chromedriver'
 driver = webdriver.Chrome(executable_path =CHROMEDRIVER_PATH, options=chrome_options)
 driver.get("https://www.flipkart.com/search?q=acrylic%20colors&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off%22")
-time.sleep(5)
+time.sleep(10)
 #print(driver)
 list_= driver.find_element_by_xpath('//*[@class = "s1Q9rs"]').text
 print("Here I have come",list_)
