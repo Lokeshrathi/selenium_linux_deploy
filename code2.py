@@ -33,11 +33,10 @@ for i in keys_:
     
     items_ = driver.find_elements_by_xpath('//*[@class = "_4ddWXP"]')
     for x9 in items_:
-        ad_ = x9.find_element_by_xpath('//*[@class = "_4HTuuX"]')
-        ad_ = ad_.text
-        if ad_ == 'Ad':
+        try:
+            ad_ = x9.find_element_by_xpath('//*[@class = "_4HTuuX"]').text
             ad.append(ad_)
-        else:
+        except:
             ad.append("Null")
      
             
