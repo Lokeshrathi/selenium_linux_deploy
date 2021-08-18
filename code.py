@@ -14,7 +14,7 @@ driver.get("https://www.flipkart.com/search?q=acrylic%20colors&otracker=search&o
 time.sleep(5)
 #print(driver)
 list_= driver.find_elements_by_xpath('//*[@class = "s1Q9rs"]')
-print("Here I have entered")
+print("Here I have come")
 names = []
 for x in list_:
      x=x.text
