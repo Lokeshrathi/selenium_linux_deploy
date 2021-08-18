@@ -2,6 +2,8 @@ from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.common.keys import Keys
 import time
+import pandas as pd
+import numpy as np
 firefoxOptions = Options()
 keys_ = ['acrylic paint tubes','acrylic colors']
 order = []
