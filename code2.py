@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.common.keys import Keys
+from selenium.common.exceptions import NoSuchElementException
 import time
 import pandas as pd
 import numpy as np
@@ -28,11 +29,17 @@ for i in keys_:
         x=x.text
         product_list.append(x)
         keyword.append(i)
+      
+    
+    items_ = driver.find_elements_by_xpath('//*[@class = "_4ddWXP"]')
+    for x9 in items_:
         try:
             ad_ = driver.find_element_by_xpath('//*[@class = "_4HTuuX"]').text
             ad.append(ad_)
-        except:
+        except NoSuchElementException:
             ad.append('Null')
+        
+     
             
     product_price_ = driver.find_elements_by_xpath('//*[@class = "_30jeq3"]')
     for x1 in product_price_:
