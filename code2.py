@@ -31,17 +31,17 @@ for i in keys_:
         x1=x1.text
         product_price.append(x1)
         
-    volume_ =  browser.find_elements_by_xpath('//*[@class="_3Djpdu"]')
+    volume_ =  driver.find_elements_by_xpath('//*[@class="_3Djpdu"]')
     for x5 in volume_:
         x5=x5.text
         volume.append(x5)
      
-    product_rate_ = browser.find_elements_by_xpath('//*[@class = "_2_R_DZ"]')
+    product_rate_ = driver.find_elements_by_xpath('//*[@class = "_2_R_DZ"]')
     for x3 in product_rate_:
         x3=x3.text
         product_rating.append(x3)
     
-    product_review_ = browser.find_elements_by_xpath('//*[@class = "_1lRcqv"]')
+    product_review_ = driver.find_elements_by_xpath('//*[@class = "_1lRcqv"]')
     for x2 in product_review_:
         x2=x2.text
         product_review.append(x2)
