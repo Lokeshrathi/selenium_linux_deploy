@@ -48,8 +48,8 @@ for i in keys_:
         x2=x2.text
         product_review.append(x2)
         
-req = pd.DataFrame(list(zip(product_list, product_price,keyword,product_review,product_rating,volume,product_link)),
-                   columns = ['Name', 'Price','Keyword','product_review','product_rating','volume','Product_link'])
+req = pd.DataFrame(list(zip(product_list, product_price,keyword,product_review,product_rating,volume)),
+                   columns = ['Name', 'Price','Keyword','product_review','product_rating','volume'])
 req['check']= 1
 fill = req.groupby(['Keyword']).agg({'check':'cumsum'})
 fill.rename({'check':'Order'},axis=1,inplace=True)
