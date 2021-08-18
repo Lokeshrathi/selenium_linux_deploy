@@ -15,6 +15,7 @@ product_review = []
 product_rating = []
 volume = []
 keyword = []
+ad =[]
 firefoxOptions.add_argument("-headless")
 driver = webdriver.Firefox(executable_path="/usr/bin/geckodriver", options=firefoxOptions)
 for i in keys_:
@@ -27,7 +28,12 @@ for i in keys_:
         x=x.text
         product_list.append(x)
         keyword.append(i)
-    
+        try:
+            ad_ = driver.find_element_by_xpath('//*[@class = "s1Q9rs"]').text
+            ad.append(ad_)
+         except:
+            ad.append('Null')
+            
     product_price_ = driver.find_elements_by_xpath('//*[@class = "_30jeq3"]')
     for x1 in product_price_:
         x1=x1.text
@@ -48,8 +54,8 @@ for i in keys_:
         x2=x2.text
         product_review.append(x2)
         
-req = pd.DataFrame(list(zip(product_list, product_price,keyword,product_review,product_rating,volume)),
-                   columns = ['Name', 'Price','Keyword','product_review','product_rating','volume'])
+req = pd.DataFrame(list(zip(product_list, product_price,keyword,product_review,product_rating,volume,ad)),
+                   columns = ['Name', 'Price','Keyword','product_review','product_rating','volume','AD'])
 req['check']= 1
 fill = req.groupby(['Keyword']).agg({'check':'cumsum'})
 fill.rename({'check':'Order'},axis=1,inplace=True)
