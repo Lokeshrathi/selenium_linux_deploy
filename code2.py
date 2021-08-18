@@ -31,7 +31,7 @@ for i in keys_:
         try:
             ad_ = driver.find_element_by_xpath('//*[@class = "s1Q9rs"]').text
             ad.append(ad_)
-         except:
+        except:
             ad.append('Null')
             
     product_price_ = driver.find_elements_by_xpath('//*[@class = "_30jeq3"]')
