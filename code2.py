@@ -29,7 +29,7 @@ for i in keys_:
         product_list.append(x)
         keyword.append(i)
         try:
-            ad_ = driver.find_element_by_xpath('//*[@class = "s1Q9rs"]').text
+            ad_ = driver.find_element_by_xpath('//*[@class = "_4HTuuX"]').text
             ad.append(ad_)
         except:
             ad.append('Null')
