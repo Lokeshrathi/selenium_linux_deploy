@@ -31,13 +31,12 @@ for i in keys_:
         keyword.append(i)
       
     
-    items_ = driver.find_elements_by_xpath('//*[@class = "_4ddWXP"]')
+    items_ = browser.find_elements_by_xpath('//*[@class = "_4ddWXP"]')
     for x9 in items_:
-        try:
-            ad_ = x9.find_element_by_xpath('//*[@class = "_4HTuuX"]').text
-            ad.append(ad_)
-        except:
-            ad.append("Null")
+        if 'Ad'in x9.text:
+            ad.append('Ad')
+        else:
+            ad.append('Organic Result')
      
             
     product_price_ = driver.find_elements_by_xpath('//*[@class = "_30jeq3"]')
