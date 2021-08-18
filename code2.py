@@ -31,7 +31,7 @@ for i in keys_:
         keyword.append(i)
       
     
-    items_ = browser.find_elements_by_xpath('//*[@class = "_4ddWXP"]')
+    items_ = driver.find_elements_by_xpath('//*[@class = "_4ddWXP"]')
     for x9 in items_:
         if 'Ad'in x9.text:
             ad.append('Ad')
