@@ -33,12 +33,11 @@ for i in keys_:
     
     items_ = driver.find_elements_by_xpath('//*[@class = "_4ddWXP"]')
     for x9 in items_:
-        try:
-            ad_ = driver.find_element_by_xpath('//*[@class = "_4HTuuX"]').text
+        ad_ = x9.find_element_by_xpath('//*[@class = "_4HTuuX"]')
+        if ad_ == 'Ad':
             ad.append(ad_)
-        except NoSuchElementException:
-            ad.append('Null')
-        
+        else:
+            ad.append("Null")
      
             
     product_price_ = driver.find_elements_by_xpath('//*[@class = "_30jeq3"]')
