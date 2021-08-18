@@ -24,12 +24,34 @@ for i in keys_:
     for x in product_list_:
         x=x.text
         product_list.append(x)
+        keyword.append(i)
     
     product_price_ = driver.find_elements_by_xpath('//*[@class = "_30jeq3"]')
     for x1 in product_price_:
         x1=x1.text
         product_price.append(x1)
-
-print(product_list)
-print(product_price)
+        
+    volume_ =  browser.find_elements_by_xpath('//*[@class="_3Djpdu"]')
+    for x5 in volume_:
+        x5=x5.text
+        volume.append(x5)
+     
+    product_rate_ = browser.find_elements_by_xpath('//*[@class = "_2_R_DZ"]')
+    for x3 in product_rate_:
+        x3=x3.text
+        product_rating.append(x3)
+    
+    product_review_ = browser.find_elements_by_xpath('//*[@class = "_1lRcqv"]')
+    for x2 in product_review_:
+        x2=x2.text
+        product_review.append(x2)
+        
+req = pd.DataFrame(list(zip(product_list, product_price,keyword,product_review,product_rating,volume,product_link)),
+                   columns = ['Name', 'Price','Keyword','product_review','product_rating','volume','Product_link'])
+req['check']= 1
+fill = req.groupby(['Keyword']).agg({'check':'cumsum'})
+fill.rename({'check':'Order'},axis=1,inplace=True)
+final = pd.concat([req,fill],axis=1)
+final.drop({'check'},axis=1,inplace=True)
+final.head()
 driver.quit()
