@@ -4,7 +4,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
 WINDOW_SIZE = "1920,1080"
 chrome_options = Options()
-chrome_options.add_argument("--headless")
+#chrome_options.add_argument("--headless")
 chrome_options.add_argument("--window-size=%s" % WINDOW_SIZE)
 chrome_options.add_argument('--no-sandbox')
 chrome_options.add_argument('--disable-dev-shm-usage')
@@ -14,7 +14,6 @@ driver.get("https://www.flipkart.com/search?q=acrylic%20colors&otracker=search&o
 time.sleep(5)
 #print(driver)
 list_= driver.find_elements_by_xpath('//*[@class = "s1Q9rs"]')
-time.sleep(5)
 print("Here I have entered")
 names = []
 for x in list_:
