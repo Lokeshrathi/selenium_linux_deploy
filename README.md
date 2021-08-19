@@ -2,7 +2,7 @@
 
 Code present in the code2.py file, helps you to run Selenium Scripts in headless mode using FireFox browser.
 
-##Prerequisites:
+## Prerequisites:
 To try out the commands and examples of this article, you must have,
 
 1) A Linux distribution (preferably Ubuntu) installed on your computer.
